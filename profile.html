@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Revanth Srinivas - Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --emerald: #10b981;
+      --emerald-dark: #059669;
+      --white: #ffffff;
+      --gray: #f5f6fa;
+      --text: #18181b;
+      --card-shadow: 0 2px 16px rgba(34,197,94,0.08);
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--white);
+      color: var(--text);
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid #e0eceb;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 5vw;
+      position: sticky;
+      top: 0;
+      z-index: 99;
+    }
+    nav .name {
+      font-weight: bold;
+      font-size: 1.35rem;
+      color: var(--emerald);
+      letter-spacing: 1px;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 2.5vw;
+    }
+    nav ul li a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    nav ul li a:hover {
+      color: var(--emerald);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 30px auto 0 auto;
+      padding: 0 2vw 36px 2vw;
+    }
+    h1, h2, h3 {
+      margin: 0;
+      color: var(--emerald-dark);
+      font-weight: bold;
+    }
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.5rem; margin-bottom: 20px; }
+    h3 { font-size: 1.13rem; }
+
+    .section {
+      margin-bottom: 52px;
+    }
+    .card-group {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .card {
+      background: var(--gray);
+      border-radius: 13px;
+      padding: 22px 20px;
+      flex: 1 1 200px;
+      min-width: 210px;
+      box-shadow: var(--card-shadow);
+      border: 1.2px solid #d1f5e2;
+    }
+    .card .card-title {
+      color: var(--emerald-dark);
+      font-size: 1.06rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .card ul {
+      margin: 0;
+      padding-left: 1.2em;
+      list-style: disc;
+      font-size: 0.97rem;
+      color: var(--text);
+    }
+    .chip-row {
+      display: flex; gap: 9px; flex-wrap: wrap; margin: 7px 0 13px 0;
+    }
+    .chip {
+      background: var(--emerald);
+      color: var(--white);
+      border-radius: 12px;
+      padding: 2px 12px;
+      font-size: 0.97em;
+      font-weight: 500;
+      margin-bottom: 2px;
+      letter-spacing: 0.5px;
+    }
+    /* Project Section */
+    .project-card {
+      background: var(--gray);
+      border-radius: 13px;
+      padding: 28px 22px;
+      margin-bottom: 26px;
+      box-shadow: var(--card-shadow);
+      border: 1.2px solid #d1f5e2;
+    }
+    .project-title {
+      color: var(--emerald-dark);
+      font-size: 1.17rem;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+    .project-features {
+      margin-top: 9px;
+      padding-left: 1.2em;
+      font-size: 0.97rem;
+    }
+    .project-link {
+      color: var(--emerald);
+      text-decoration: underline;
+      font-weight: bold;
+      display: inline-block;
+      margin-bottom: 14px;
+      transition: color 0.2s;
+    }
+    .project-link:hover {
+      color: var(--emerald-dark);
+    }
+    /* Education Section */
+    .edu-card {
+      background: var(--gray);
+      border-radius: 13px;
+      padding: 18px 17px;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      border: 1.2px solid #bbeedd;
+    }
+    .edu-degree {
+      color: var(--emerald-dark);
+      font-weight: bold;
+      font-size: 1.01rem;
+    }
+    .edu-info {
+      font-size: 0.98rem;
+      color: #084b3b;
+    }
+    .edu-result {
+      color: #059669;
+      font-size: 0.97rem;
+    }
+    /* Contact Section */
+    .contact-options {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+    .contact-card {
+      background: var(--gray);
+      border-radius: 10px;
+      border: 1.1px solid #b5eee0;
+      padding: 18px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 110px;
+      font-size: 1.02rem;
+      color: var(--emerald-dark);
+      font-weight: bold;
+      transition: background 0.2s;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .contact-card:hover {
+      background: var(--emerald-dark);
+      color: var(--white);
+    }
+    @media (max-width: 800px) {
+      .card-group, .contact-options { flex-direction: column; gap: 0; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <span class="name">Revanth Srinivas</span>
+    <ul>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section id="skills" class="section">
+      <h2>Technical Skills</h2>
+      <div class="card-group">
+        <div class="card">
+          <div class="card-title">Programming Languages</div>
+          <ul>
+            <li>Python</li>
+            <li>Java</li>
+            <li>C</li>
+            <li>JavaScript</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-title">Web Development</div>
+          <ul>
+            <li>React.js</li>
+            <li>Node.js</li>
+            <li>Express.js</li>
+            <li>HTML/CSS</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-title">Databases</div>
+          <ul>
+            <li>MongoDB</li>
+            <li>MySQL</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-title">Cloud &amp; Tools</div>
+          <ul>
+            <li>AWS Cloud Services</li>
+            <li>Git/GitHub</li>
+            <li>Vercel</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="projects" class="section">
+      <h2>Featured Projects</h2>
+      <div class="project-card">
+        <div class="project-title">SkyLand – Sports Venue Booking Platform</div>
+        <div class="chip-row">
+          <span class="chip">MongoDB</span>
+          <span class="chip">Express.js</span>
+          <span class="chip">React</span>
+          <span class="chip">Node.js</span>
+          <span class="chip">Vercel</span>
+        </div>
+        <a class="project-link" href="#">View Live Demo →</a>
+        <div style="color:#373934;padding:8px 0 0 0;font-size:1rem;">
+          A full-stack web application that streamlines venue bookings for sports and leisure activities. Built with the MERN stack, it provides a seamless booking experience for users.
+        </div>
+        <ul class="project-features">
+          <li>Online reservation for cricket nets, swimming pool, and party house</li>
+          <li>Real-time booking updates and dynamic scheduling</li>
+          <li>Responsive design with advanced UI components</li>
+          <li>Optimized performance for cross-device compatibility</li>
+          <li>Deployed on Vercel for reliable access</li>
+        </ul>
+      </div>
+    </section>
+    <section id="education" class="section">
+      <h2>Education</h2>
+      <div class="edu-card">
+        <div class="edu-degree">Bachelor of Technology (B.Tech) in Computer Science & Engineering</div>
+        <div class="edu-info">SRKR Engineering College, Bhimavaram | 2023-2027</div>
+        <div class="edu-result">GPA: 9.34/10</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-degree">Intermediate (MPC - Mathematics, Physics, Chemistry)</div>
+        <div class="edu-info">Sasi Junior College, Rajahmundry | 2021-2023</div>
+        <div class="edu-result">98.2%</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-degree">Secondary School Certificate (SSC)</div>
+        <div class="edu-info">ALN Blossoms EM School, Rajahmundry | 2021</div>
+        <div class="edu-result">10/10</div>
+      </div>
+    </section>
+    <section id="contact" class="section">
+      <h2>Get In Touch</h2>
+      <div style="margin-bottom: 10px; color:#325e58;">I'm always open to discussing new opportunities and interesting projects</div>
+      <div class="contact-options">
+        <a class="contact-card" href="mailto:mallarevanthsrinivas@gmail.com">Email</a>
+        <a class="contact-card" href="tel:+918247693087">Phone</a>
+        <a class="contact-card" href="#">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+  <footer style="text-align:center;padding:24px;color:#5f7570;font-size:0.97em;">
+    © 2025 Revanth Srinivas. All rights reserved.
+  </footer>
+</body>
+</html>
