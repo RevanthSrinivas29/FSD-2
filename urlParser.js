@@ -3,7 +3,7 @@ module.exports = (req, res) => {
         res.writeHead(200, { 'Content-Type': 'text/html' });
         const requestUrl = new URL(req.url, `http://${req.headers.host}`);
 
-        if (requestUrl.pathname === '/parse' && requestUrl.searchParams.has('url')) {
+        if (url=== '/parse') {
             const urlToParse = requestUrl.searchParams.get('url');
 
             try {
