@@ -37,7 +37,7 @@ const server = http.createServer((req, res) => {
         const httpTransferHandler = require('./httptransfer');
         httpTransferHandler(req, res);
     } 
-     else if (url === '/url') {
+     else if (url === '/url' || url.startsWith('/parse')) {
         // Delegate logic to app.js
         const urlHandler = require('./urlParser');
         urlHandler(req, res);
