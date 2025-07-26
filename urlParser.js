@@ -2,13 +2,10 @@ module.exports = (req, res) => {
     if (req.method === 'GET') {
         res.writeHead(200, { 'Content-Type': 'text/html' });
         const requestUrl = new URL(req.url, `http://${req.headers.host}`);
-
-        if (url=== '/parse') {
+        if (requestUrl.pathname === '/parse') {
             const urlToParse = requestUrl.searchParams.get('url');
-
             try {
                 const parsedUrl = new URL(urlToParse);
-
                 res.end(`
                     <h1>Parsed URL Components</h1>
                     <p><strong>Original URL:</strong> ${urlToParse}</p>
@@ -21,17 +18,18 @@ module.exports = (req, res) => {
                     <p><strong>Path:</strong> ${parsedUrl.pathname}</p>
                     <p><strong>Search:</strong> ${parsedUrl.search}</p>
                     <p><strong>Search Params:</strong> <pre>${JSON.stringify(
-                        Object.fromEntries(parsedUrl.searchParams.entries()), null, 2)}</pre></p>
+                        Object.fromEntries(parsedUrl.searchParams.entries()), null, 2
+                    )}</pre></p>
                     <p><strong>Hash:</strong> ${parsedUrl.hash}</p>
                     <p><a href="/">Back to Home</a></p>
                 `);
             } catch (error) {
                 res.end(`
                     <h1>Error Parsing URL</h1>
-                    <p>Could not parse the provided URL: <strong>${urlToParse}</strong></p>
+                    <p>Could not parse the provided URL: <strong>${urlToParse || 'Not provided'}</strong></p>
                     <p>Error: ${error.message}</p>
-                    <p>Try this example: <a href="/parse?url=https://www.example.com:8080/path/name?user=john&age=25#section1">
-                    /parse?url=https://www.example.com:8080/path/name?user=john&age=25#section1</a></p>
+                    <p>Try: <a href="/parse?url=https://www.example.com:8080/path?user=john&age=25#section1">
+                    /parse?url=https://www.example.com:8080/path?user=john&age=25#section1</a></p>
                     <p><a href="/">Back to Home</a></p>
                 `);
             }
@@ -40,8 +38,8 @@ module.exports = (req, res) => {
             res.end(`
                 <h1>Welcome to the Node.js URL Parser</h1>
                 <p>To parse a URL, use: <code>/parse?url=https://example.com</code></p>
-                <p>Try it: <a href="/parse">
-                /parse?url=https://www.example.com:8080/path/name?user=john&age=25#section1</a></p>
+                <p>Try it: <a href="/parse?url=https://www.example.com:8080/path?user=john&age=25#section1">
+                /parse?url=https://www.example.com:8080/path?user=john&age=25#section1</a></p>
                 <p><a href="/">Back to Home</a></p>
             `);
         }
