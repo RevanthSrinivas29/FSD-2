@@ -8,7 +8,9 @@ const server = http.createServer((req, res) => {
         // Home page with navigation links
         res.writeHead(200, { 'Content-Type': 'text/html' });
         res.end(`
-            <h1>Welcome to the App</h1>
+        <h1>welcome to node .js server</h1>
+        <p>this is a basic web server created using node.js http module</p>
+        <p>current time:${new Date().toLocaleString()}</p>
             <ul>
                 <li><a href="/profile">View Profile</a></li>
                 <li><a href="/httptransfer">Data Transfer</a></li>
