@@ -1,4 +1,4 @@
-module.export = (req,res)=>{
+module.exports = (req,res)=>{
 const math = require("./mathUtils");
 
 const a = 100;
