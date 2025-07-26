@@ -40,7 +40,7 @@ module.exports = (req, res) => {
             res.end(`
                 <h1>Welcome to the Node.js URL Parser</h1>
                 <p>To parse a URL, use: <code>/parse?url=https://example.com</code></p>
-                <p>Try it: <a href="/parse?url=https://www.example.com:8080/path/name?user=john&age=25#section1">
+                <p>Try it: <a href="/parse">
                 /parse?url=https://www.example.com:8080/path/name?user=john&age=25#section1</a></p>
                 <p><a href="/">Back to Home</a></p>
             `);
