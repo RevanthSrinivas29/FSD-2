@@ -1,9 +1,8 @@
 module.exports = (req, res) => {
     if (req.method === 'GET') {
         res.writeHead(200, { 'Content-Type': 'text/html' });
-
         const requestUrl = new URL(req.url, `http://${req.headers.host}`);
-
+        console.log(requestUrl);
         if (requestUrl.pathname === '/parse' && requestUrl.searchParams.has('url')) {
             const urlToParse = requestUrl.searchParams.get('url');
 
