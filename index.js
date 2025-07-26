@@ -39,7 +39,7 @@ const server = http.createServer((req, res) => {
     } 
      else if (url === '/URL') {
         // Delegate logic to app.js
-        const urlHandler = require('./urlParser');
+        const urlHandler = require('./urlparser');
         urlHandler(req, res);
     }
     else if (url === '/app') {
