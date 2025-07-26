@@ -15,7 +15,7 @@ const server = http.createServer((req, res) => {
                 <li><a href="/profile">View Profile</a></li>
                 <li><a href="/httptransfer">Data Transfer</a></li>
                 <li><a href="/app">App Logic</a></li>
-                <li><a href="/URL">URL Parser</a></li>
+                <li><a href="/url">URL Parser</a></li>
             </ul>
         `);
     } 
