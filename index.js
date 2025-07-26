@@ -15,6 +15,7 @@ const server = http.createServer((req, res) => {
                 <li><a href="/profile">View Profile</a></li>
                 <li><a href="/httptransfer">Data Transfer</a></li>
                 <li><a href="/app">App Logic</a></li>
+                <li><a href="/URL">URL Parser</a></li>
             </ul>
         `);
     } 
@@ -36,6 +37,11 @@ const server = http.createServer((req, res) => {
         const httpTransferHandler = require('./httptransfer');
         httpTransferHandler(req, res);
     } 
+     else if (url === '/URL') {
+        // Delegate logic to app.js
+        const urlHandler = require('./urlParser');
+        urlHandler(req, res);
+    }
     else if (url === '/app') {
         // Delegate logic to app.js
         const appHandler = require('./app');
